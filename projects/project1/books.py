@@ -60,3 +60,16 @@ async def read_author_category(book_author: str, category: str):
 @app.post("/books/create_book")
 async def create_book(new_book=Body()):
     BOOKS.append(new_book)
+
+@app.put("/books/update_book_category")
+async def update_book_category(updated_book=Body()):
+    for i in range(len(BOOKS)):
+        if BOOKS[i].get('title').casefold() == updated_book.get('title').casefold():
+            BOOKS[i] = updated_book
+
+@app.delete("/books/delete_book/{title_book}")
+async def delete_book(title_book: str):
+    for i in range(len(BOOKS)):
+        if BOOKS[i].get('title').casefold() == title_book.casefold():
+            BOOKS.pop(i)
+            break
