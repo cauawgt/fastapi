@@ -1,0 +1,15 @@
+# Ignorar ambiente virtual
+fastapienv/
+venv/
+.env
+
+# Ignorar arquivos compilados do Python (bytecode)
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Ignorar arquivos de sistema e IDEs (opcional, mas recomendado)
+.DS_Store
+.vscode/
+.idea/
