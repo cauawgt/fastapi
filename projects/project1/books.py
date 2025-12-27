@@ -38,6 +38,15 @@ async def read_books_author(author_name: str):
     
     return books
 
+@app.get("/books/author/")
+async def read_books_author(author_name: str):
+    books = []
+    for book in BOOKS:
+        if book.get('author').casefold() == author_name.casefold():
+            books.append(book)
+    
+    return books
+
 @app.get("/books/")
 async def read_category_by_query(category: str):
     books_to_return = []
