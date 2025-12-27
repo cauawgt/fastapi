@@ -7,6 +7,7 @@ class BookRequest(BaseModel):
     author: str = Field(min_length=1)
     description: str = Field(min_length=1, max_length=100)
     rating: int = Field(gt=-1, lt=11)
+    published_date: int = Field(gt=1900, lt=2031)
 
     model_config = {
         "json_schema_extra": {
@@ -15,6 +16,7 @@ class BookRequest(BaseModel):
                 "author": "name's author",
                 "description": "A new description",
                 "rating": 10,
+                "published_date": 2000,
             }
         }
     }
