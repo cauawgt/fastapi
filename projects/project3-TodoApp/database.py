@@ -5,7 +5,7 @@ from sqlalchemy.ext.declarative import declarative_base
 # Define the location of the database file. 
 # 'sqlite:///' tells SQLAlchemy we are using SQLite. 
 # './todos.db' means the file is in the current directory.
-SQLALCHEMY_DATABASE_URL = 'sqlite:///./todos.db'
+SQLALCHEMY_DATABASE_URL = 'sqlite:///./todosapp.db'
 
 # Create the engine. This is the starting point for any SQLAlchemy application.
 # 'check_same_thread': False is specific to SQLite in FastAPI to allow 
